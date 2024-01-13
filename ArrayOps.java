@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class ArrayOps {
     public static void main(String[] args) {
     }
@@ -68,45 +66,33 @@ public class ArrayOps {
 
     public static boolean isSorted(int [] array) {
         boolean Sorted = true;
-        int[] ord = Arrays.copyOf(array, array.length);
         int n = array.length;
-        
+        int[] ord = new int[n];
+        for (int i = 0; i < n; i++){
+            ord[i] = array[i]; 
+        }
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                if (ord[j] > ord[j + 1]) {
+                    int temp = ord[j];
+                    ord[j] = ord[j + 1];
+                    ord[j + 1] = temp;
                 }
             }
         }
 
-        int[] rev = reversed(ord);
-        if (Arrays.equals(array, ord) || Arrays.equals(array, rev)){
-            Sorted = true;
-        } else {
-            Sorted = false;
+        int[] rev = new int[n];
+        for (int i = 0; i < n; i++) {
+            rev[i] = ord[n - i - 1];
+            }
+
+        for (int i = 0; i < n; i++) {
+            if (array[i] != rev[i] && array[i] != ord[i]) {
+                Sorted = false;
+            }
         }
         System.out.println(Sorted);
         return Sorted;
-    }
-
-    public static int[] reversed(int[] array) {
-        int N = array.length;
-        int[] reversed = new int[N];
-        for (int i = 0; i < N; i++) {
-        reversed[i] = array[N - i - 1];
-        }
-        return reversed;
-        }
-    
-    public static boolean equal(int[] array1, int[] array2) {
-        int n = array1.length;
-        for (int i = 0; i < n; i++) {
-            if (array1[i] != array2[i]) {
-                return false;
-            }
-        }
-        return true;
     }
 }
