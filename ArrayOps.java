@@ -2,12 +2,6 @@ import java.util.Arrays;
 
 public class ArrayOps {
     public static void main(String[] args) {
-        findMissingInt(new int [] {1, 0, 4, 3});
-        secondMaxValue(new int [] {-202, 48, 13, 7, 8});
-        containsTheSameElements(new int [] {2, 2 , 3, 7, 8, 3, 2}, new int [] {8, 2, 7, 7, 3});
-        containsTheSameElements(new int [] {3, -4, 1, 2, 5,}, new int [] {1, 3 ,-4, 5});
-        isSorted(new int [] {7, 5, 4, 3, -12});
-        isSorted(new int[] {1, -2, 3});
     }
     
     public static int findMissingInt (int [] array) {
