@@ -4,10 +4,8 @@ public class ArrayOps {
     
     public static int findMissingInt (int [] array) {
         int n = array.length;
-        if (n == 0) {
-            System.out.println("Minimum 1");
-        } else if (n == 1) {
-            System.out.println("1");
+        if (n == 1) {
+            return 1;
         }
         
          for (int i = 0; i < n; i++) {
@@ -19,15 +17,13 @@ public class ArrayOps {
                 }
             }
         }
-
         for (int i = 0; i < n; i++){
             int y = array[i];
             if (y != i){
-                System.out.println(i);
-                break;
+                return i;
             }
         }
-        return -1;
+        return n;
     }
 
     public static int secondMaxValue(int [] array) {
@@ -42,9 +38,7 @@ public class ArrayOps {
                 }
             }
         }
-
-        System.out.println(array[(n-2)]);
-        return 0;
+        return array[(n - 2)];
     }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
@@ -60,7 +54,6 @@ public class ArrayOps {
                 }
             }
         }
-        System.out.println(SameElements);
         return SameElements;
     }
 
@@ -92,7 +85,6 @@ public class ArrayOps {
                 Sorted = false;
             }
         }
-        System.out.println(Sorted);
         return Sorted;
     }
 }
