@@ -49,7 +49,7 @@ public class StringOps {
                     return x;
                     
                 } else if (i == 1){
-                    if ((char)(string.charAt(i)) == 73){
+                    if (((char)(string.charAt(i))) > 64 && ((char)(string.charAt(i)) < 91)){
                         x = x + ((char)(string.charAt(i) + 32));
                     } else {
                         x = x + (string.charAt(i));
@@ -92,9 +92,9 @@ public class StringOps {
                 j++;
             }
         }
-        
 
         return z;
     }
 
 }
+
