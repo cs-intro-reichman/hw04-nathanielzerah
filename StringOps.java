@@ -1,5 +1,6 @@
 public class StringOps {
     public static void main(String[] args) {
+
     }
 
     public static String capVowelsLowRest (String string) {
@@ -44,23 +45,28 @@ public class StringOps {
             if (string.charAt(i) == ' '){
 
                 i++;
+
+                while (i < n - 1 && string.charAt(i) == ' ') {
+                    i++;
+                }
+
                 if (i == n){
 
                     return x;
-                    
+                 
                 } else if (i == 1){
                     if (((char)(string.charAt(i))) > 64 && ((char)(string.charAt(i)) < 91)){
                         x = x + ((char)(string.charAt(i) + 32));
                     } else {
                         x = x + (string.charAt(i));
                     }
-                } else if (((char)(string.charAt(i))) > 64 && ((char)(string.charAt(i)) < 91)){
-
-                            x = x + (string.charAt(i));
-
                 } else {
-                        x = x + ((char)(string.charAt(i) - 32));
-                    
+                    if (((char)(string.charAt(i))) > 64 && ((char)(string.charAt(i)) < 91)) {
+                            x = x + (string.charAt(i));
+                    } else { 
+                        x = x + ((char)(string.charAt(i) - 32)); 
+                    } 
+
                 }
 
             } else if (y >= 65 && y <= 90){
